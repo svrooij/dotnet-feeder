@@ -38,11 +38,14 @@ public class FeedCommand : ICommand
     [CommandOption("ci", Description = "Running in CI env, creates github logging", EnvironmentVariable = "CI")]
     public bool CI { get; init; } = false;
 
+    [CommandOption("wordpress", Description = "Wordpress api has a different format")]
+    public bool Wordpress {get; init;} = false;
+
     public async ValueTask ExecuteAsync(IConsole console)
     {
         if (string.IsNullOrEmpty(Url)) return; // Can never happen is forced to be not null by CliFX
-        var cancellation = console.RegisterCancellationHandler();
-        var feed = await _feedClient.GetAsync(Url, cancellation);
+        var cancellationToken = console.RegisterCancellationHandler();
+        var feed = await _feedClient.GetAsync(Url, new FeedOptions{ Wordpress = Wordpress }, cancellationToken);
         if(feed?.Items == null || feed.Items.Length == 0) {
             if (CI) {
                 console.Output.WriteOutputVariable("files-updated", false);
@@ -50,7 +53,7 @@ public class FeedCommand : ICommand
             return;
         }
         console.Output.WriteLine("✅ Downloaded feed with {0} items", feed?.Items?.Length);
-        await WriteToFiles(feed, console, cancellation);
+        await WriteToFiles(feed, console, cancellationToken);
     }
 
     private async Task WriteToFiles(Feed? feed, IConsole console, CancellationToken cancellationToken)

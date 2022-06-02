@@ -25,6 +25,11 @@ inputs:
       'Tag to replace, data between <!-- start {tag} --> and <!-- end {tag} --> will be replaced.'
     required: false
     default: 'posts'
+  extra_args:
+    description:
+      'Extra arguments'
+    required: false
+    default: ''
 outputs:
   files-updated:
     description:
@@ -42,3 +47,4 @@ runs:
   - ${{ inputs.tag }}
   - '--template'
   - ${{ inputs.template }}
+  - ${{ inputs.extra_args}}

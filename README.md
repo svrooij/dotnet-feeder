@@ -31,6 +31,8 @@ OPTIONS
   --count           Number of items to use Default: "10".
   --tag             Tag to look for, <!-- start {tag} --> / <!-- end {tag} --> Default: "posts".
   --template        Item template when writing markdown Default: "- [{title}]({url})".
+  --ci              Running in CI env, creates github logging Environment variable: CI. Default: "False".
+  --wordpress       Wordpress api has a different format Default: "False".
   -h|--help         Shows help text. 
 ```
 
@@ -69,6 +71,19 @@ jobs:
 ```
 
 This workflow will trigger daily at 6:45 and can be triggered from the actions screen (or other repositories :wink:)
+
+### Support for wordpress blogs
+
+Each wordpress website has (be default) a json api enabled. This feed is available at `https://{your-wordpress-site}/wp-json/wp/v2/posts?_fields=id,title,link` but this uses a different format. To enable wordpress feeds, you'll need to add the `--wordpress` parameter. In the github action you should add it like this:
+
+```yaml
+      - name: Dotnet-feeder
+        uses: svrooij/dotnet-feeder@main
+        with:
+          feed: https://svrooij.io/feed.json
+          files: ./README.md
+          extra_args: --wordpress
+```
 
 ## Sample posts from my blog
 
