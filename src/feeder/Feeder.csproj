@@ -9,6 +9,12 @@
 
   <ItemGroup>
     <PackageReference Include="CliFx" Version="2.2.5" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="6.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Http" Version="6.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Feeder.Services\Feeder.Services.csproj" />
   </ItemGroup>
 
 </Project>

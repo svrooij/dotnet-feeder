@@ -11,7 +11,7 @@
       "preLaunchTask": "build",
       // If you have changed target frameworks, make sure to update the program path.
       "program": "${workspaceFolder}/src/feeder/bin/Debug/net6.0/Feeder.dll",
-      "args": ["feed", "https://svrooij.io/feed.json", "..\\../README.md", "--count", "5", "--template", "- [{title}]({url})"],
+      "args": ["feed", "https://svrooij.io/feed.json", "..\\../README.md", "--count", "5", "--template", "- [{title}]({url}) tagged: {tags}"],
       // "args": ["feed", "--help"],
       "cwd": "${workspaceFolder}/src/feeder",
       // For more information about the 'console' field, see https://aka.ms/VSCode-CS-LaunchJson-Console

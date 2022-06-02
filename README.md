@@ -1,6 +1,6 @@
 # dotnet-feeder
 
-A dotnet tool for parsing rss feeds and modifying a markdown file
+Dotnet Feeder is a collection of handy tools to do stuff with markdown files. It's all build in .NET 6 and available as a [dotnet-tool](https://docs.microsoft.com/en-us/dotnet/core/tools/global-tools). Some features can also be used as a Github Action.
 
 ## Feed command
 
@@ -35,9 +35,9 @@ OPTIONS
 By running `dotnet-feeder feed https://svrooij.io/feed.json ./README.md --count 5` your can generate the section below.
 
 <!-- start posts -->
-- [Protect against certificate extraction - encryption](https://svrooij.io/2022/06/01/certificate-extraction-encryption/)
-- [Protect against certificate extraction - Client credentials](https://svrooij.io/2022/05/27/certificate-extraction-client-credentials/)
-- [Extract all Azure AD admin accounts](https://svrooij.io/2022/05/17/extract-azure-admins/)
-- [Extract all users with powershell and what you should do about it](https://svrooij.io/2022/05/16/extract-all-users-with-powershell/)
-- [Deploy to Azure Static Web App with only the name](https://svrooij.io/2022/05/05/deploy-static-web-app-without-token/)
+- [Protect against certificate extraction - encryption](https://svrooij.io/2022/06/01/certificate-extraction-encryption/) tagged: Security, Encryption
+- [Protect against certificate extraction - Client credentials](https://svrooij.io/2022/05/27/certificate-extraction-client-credentials/) tagged: Security, Azure AD
+- [Extract all Azure AD admin accounts](https://svrooij.io/2022/05/17/extract-azure-admins/) tagged: Powershell, Azure AD, Data Extraction
+- [Extract all users with powershell and what you should do about it](https://svrooij.io/2022/05/16/extract-all-users-with-powershell/) tagged: Powershell, Azure AD, Data Extraction
+- [Deploy to Azure Static Web App with only the name](https://svrooij.io/2022/05/05/deploy-static-web-app-without-token/) tagged: Static Web App, Azure CLI
 <!-- end posts -->

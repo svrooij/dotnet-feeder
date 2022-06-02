@@ -1,0 +1,26 @@
+name: dotnet package
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup .NET Core SDK v6.x
+        uses: actions/setup-dotnet@v2
+        with:
+          dotnet-version: v6.x
+      - name: Install dependencies
+        run: dotnet restore
+      - name: Build
+        run: dotnet build --configuration Release --no-restore
+      - name: Test
+        run: dotnet test --no-restore --verbosity normal --logger trx
+      - name: Test Report
+        uses: dorny/test-reporter@v1
+        if: success() || failure()            # run this step even if previous step failed
+        with:
+          name: DOTNET tests                  # Name of the check run which will be created
+          path: tests/**/TestResults/*.trx    # Path to test results
+          reporter: dotnet-trx                # Format of test results
