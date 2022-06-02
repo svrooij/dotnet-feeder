@@ -12,4 +12,4 @@ RUN dotnet publish feeder/Feeder.csproj -c Release -o out
 FROM mcr.microsoft.com/dotnet/runtime:6.0-alpine
 WORKDIR /app
 COPY --from=build-env /app/out .
-ENTRYPOINT ["dotnet", "Feeder.dll"]
+ENTRYPOINT ["/usr/bin/dotnet", "/app/Feeder.dll"]

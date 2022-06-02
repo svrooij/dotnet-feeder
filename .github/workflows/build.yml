@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - 'src/**/*.cs*'
+      - 'Dockerfile'
 
 jobs:
   test:
