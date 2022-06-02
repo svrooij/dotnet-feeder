@@ -35,11 +35,20 @@ public class FeedCommand : ICommand
     [CommandOption("template", Description = "Item template when writing markdown")]
     public string Template { get; init; } = "- [{title}]({url})";
 
+    [CommandOption("ci", Description = "Running in CI env, creates github logging", EnvironmentVariable = "CI")]
+    public bool CI { get; init; } = false;
+
     public async ValueTask ExecuteAsync(IConsole console)
     {
         if (string.IsNullOrEmpty(Url)) return; // Can never happen is forced to be not null by CliFX
         var cancellation = console.RegisterCancellationHandler();
         var feed = await _feedClient.GetAsync(Url, cancellation);
+        if(feed?.Items == null || feed.Items.Length == 0) {
+            if (CI) {
+                console.Output.WriteOutputVariable("files-updated", false);
+            }
+            return;
+        }
         console.Output.WriteLine("✅ Downloaded feed with {0} items", feed?.Items?.Length);
         await WriteToFiles(feed, console, cancellation);
     }
@@ -57,25 +66,25 @@ public class FeedCommand : ICommand
 
         var md = sb.ToString();
 
+        var fileUpdated = false;
+
         foreach (var filename in Files)
         {
-            await WriteToFile(md, filename, console, cancellationToken);
+            fileUpdated = await WriteToFile(md, filename, console, cancellationToken) || fileUpdated;
+        }
+
+        if (CI) {
+            console.Output.WriteOutputVariable("files-updated", fileUpdated);
         }
     }
 
-    private async Task WriteToFile(string newContent, string filename, IConsole console, CancellationToken cancellationToken)
+    private async ValueTask<bool> WriteToFile(string newContent, string filename, IConsole console, CancellationToken cancellationToken)
     {
         var absolutePath = FileService.ConvertToAbsolute(filename);
 
         var result = await _contentService.ReplaceTextBetweenAsync(absolutePath, $"<!-- start {Tag} -->", $"<!-- end {Tag} -->", newContent, cancellationToken);
 
-        if (result)
-        {
-            await console.Output.WriteLineAsync($"✔ Modifying file {absolutePath}");
-        }
-        else
-        {
-            await console.Output.WriteLineAsync($"❌ Modifying file {absolutePath}");
-        }
+        await console.Output.WriteLineAsync($"{(result ? "✔" : "❌")} Modifying file {absolutePath}");
+        return result;
     }
 }
