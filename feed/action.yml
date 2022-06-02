@@ -10,7 +10,6 @@ inputs:
   files:
     description:
       'File(s) you wish to update. Separate multiple by ;'
-    default: '/github/workspace'
   template:
     description:
       'The post template'
@@ -25,7 +24,7 @@ inputs:
     description:
       'Tag to replace, data between <!-- start {tag} --> and <!-- end {tag} --> will be replaced.'
     required: false
-    default: 'post'
+    default: 'posts'
 outputs:
   files-updated:
     description:

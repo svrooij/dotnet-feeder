@@ -1,6 +1,9 @@
 name: dotnet package
 
-on: [push]
+on:
+  push:
+    paths:
+      - 'src/**/*.cs*'
 
 jobs:
   test:
