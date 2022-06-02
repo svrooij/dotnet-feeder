@@ -7,10 +7,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: Setup .NET Core SDK v6.x
+      - name: Setup .NET Core SDK v6.0.x
         uses: actions/setup-dotnet@v2
         with:
-          dotnet-version: v6.x
+          dotnet-version: v6.0.x
       - name: Install dependencies
         run: dotnet restore
       - name: Build
