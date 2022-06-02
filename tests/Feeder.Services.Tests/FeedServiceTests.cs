@@ -16,7 +16,7 @@ public class FeedServiceTests
         var feed = await _client.GetAsync(url);
 
         Assert.NotNull(feed);
-        Assert.NotNull(feed.Title);
-        Assert.NotNull(feed.Items);
+        Assert.NotNull(feed?.Title);
+        Assert.NotNull(feed?.Items);
     }
 }

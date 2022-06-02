@@ -37,14 +37,18 @@ public class FeedCommand : ICommand
 
     public async ValueTask ExecuteAsync(IConsole console)
     {
+        if (string.IsNullOrEmpty(Url)) return; // Can never happen is forced to be not null by CliFX
         var cancellation = console.RegisterCancellationHandler();
         var feed = await _feedClient.GetAsync(Url, cancellation);
         console.Output.WriteLine("✅ Downloaded feed with {0} items", feed?.Items?.Length);
         await WriteToFiles(feed, console, cancellation);
     }
 
-    private async Task WriteToFiles(Feed feed, IConsole console, CancellationToken cancellationToken)
+    private async Task WriteToFiles(Feed? feed, IConsole console, CancellationToken cancellationToken)
     {
+        if (Files == null || Files.Count == 0) return;
+        if (feed?.Items == null) return;
+
         var sb = new StringBuilder();
         foreach (var item in feed.Items.Take(Count))
         {
