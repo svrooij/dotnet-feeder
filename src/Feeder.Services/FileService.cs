@@ -4,8 +4,11 @@ public class FileService : Base.IFileService
 {
     public static string ConvertToAbsolute(string path)
     {
-        var fixedFilename = Path.PathSeparator == '/' ? path.Replace('\\', '/') : path.Replace('/', '\\');
-        return fixedFilename.StartsWith(".") ? Path.Combine(Directory.GetCurrentDirectory(), fixedFilename.Replace('/', '\\')) : fixedFilename;
+        var fixedFilename = Path.DirectorySeparatorChar == '/' ? path.Replace('\\', '/') : path.Replace('/', '\\');
+        if(fixedFilename.StartsWith("." + Path.DirectorySeparatorChar)) {
+            return Path.Combine(Directory.GetCurrentDirectory(), fixedFilename.Substring(2));
+        }
+        return fixedFilename.StartsWith(".." + Path.DirectorySeparatorChar) ? Path.Combine(Directory.GetCurrentDirectory(), fixedFilename) : fixedFilename;
     }
 
     public void DeleteFile(string filename)
