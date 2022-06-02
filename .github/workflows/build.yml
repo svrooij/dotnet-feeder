@@ -28,7 +28,7 @@ jobs:
   
   docker:
     runs-on: ubuntu-latest
-    depends-on: [test]
+    needs: [test]
     steps:
       -
         name: Set up QEMU
