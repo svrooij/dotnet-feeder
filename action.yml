@@ -1,0 +1,44 @@
+name: 'dotnet-feeder - feed'
+description: 'Writing posts from a json feed to a markdown file, use for automatically updating your Profile readme.'
+branding:
+  icon: rss
+  color: orange
+inputs:
+  feed:
+    description:
+      'The URL of the json feed'
+  files:
+    description:
+      'File(s) you wish to update. Separate multiple by ;'
+  template:
+    description:
+      'The post template'
+    required: false
+    default: '- [{title}]({url})'
+  count:
+    description:
+      'Number of posts to write to the file'
+    required: false
+    default: 5
+  tag:
+    description:
+      'Tag to replace, data between <!-- start {tag} --> and <!-- end {tag} --> will be replaced.'
+    required: false
+    default: 'posts'
+outputs:
+  files-updated:
+    description:
+      'Wether or not there where files updated, to conditionally trigger a commit'
+runs:
+  using: 'docker'
+  image: 'docker://ghcr.io/svrooij/dotnet-feeder:latest'
+  args:
+  - 'feed'
+  - ${{ inputs.feed }}
+  - ${{ inputs.files }}
+  - '--count'
+  - ${{ inputs.count }}
+  - '--tag'
+  - ${{ inputs.tag }}
+  - '--template'
+  - ${{ inputs.template }}

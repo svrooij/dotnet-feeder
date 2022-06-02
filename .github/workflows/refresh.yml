@@ -1,0 +1,23 @@
+on:
+  schedule:
+    - cron: '45 6 * * 6'
+  workflow_dispatch:
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Dotnet-feeder
+        uses: svrooij/dotnet-feeder@main
+        with:
+          feed: https://svrooij.io/feed.json
+          files: ./README.md
+          tag: s_posts
+      - uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: Posts refreshed
+          file_pattern: README.md

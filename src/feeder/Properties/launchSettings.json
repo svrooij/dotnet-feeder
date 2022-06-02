@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Feeder": {
+      "commandName": "Project",
+      "commandLineArgs": "feed --help"
+    }
+  }
+}
