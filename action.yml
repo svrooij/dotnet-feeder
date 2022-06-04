@@ -47,4 +47,3 @@ runs:
   - ${{ inputs.tag }}
   - '--template'
   - ${{ inputs.template }}
-  - ${{ inputs.extra_args}}
