@@ -90,12 +90,11 @@ Each wordpress website has (be default) a json api enabled. This feed is availab
 By running `dotnet-feeder feed https://svrooij.io/feed.json ./README.md --count 5 --tag s_posts` your can generate the section below.
 
 <!-- start s_posts -->
-- [Protect against certificate extraction - encryption](https://svrooij.io/2022/06/01/certificate-extraction-encryption/) tagged: Security, Encryption
-- [Protect against certificate extraction - Client credentials](https://svrooij.io/2022/05/27/certificate-extraction-client-credentials/) tagged: Security, Azure AD
-- [Extract all Azure AD admin accounts](https://svrooij.io/2022/05/17/extract-azure-admins/) tagged: Powershell, Azure AD, Data Extraction
-- [Extract all users with powershell and what you should do about it](https://svrooij.io/2022/05/16/extract-all-users-with-powershell/) tagged: Powershell, Azure AD, Data Extraction
-- [Deploy to Azure Static Web App with only the name](https://svrooij.io/2022/05/05/deploy-static-web-app-without-token/) tagged: Static Web App, Azure CLI
-- [Access Azure AD protected API with managed Identity](https://svrooij.io/2022/04/21/access-api-with-managed-identity/) tagged: Graph API, Azure AD, Managed Identity
+- [Protect against certificate extraction - encryption](https://svrooij.io/2022/06/01/certificate-extraction-encryption/)
+- [Protect against certificate extraction - Client credentials](https://svrooij.io/2022/05/27/certificate-extraction-client-credentials/)
+- [Extract all Azure AD admin accounts](https://svrooij.io/2022/05/17/extract-azure-admins/)
+- [Extract all users with powershell and what you should do about it](https://svrooij.io/2022/05/16/extract-all-users-with-powershell/)
+- [Deploy to Azure Static Web App with only the name](https://svrooij.io/2022/05/05/deploy-static-web-app-without-token/)
 <!-- end s_posts -->
 
 ## Developer stuff
