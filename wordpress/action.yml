@@ -1,0 +1,42 @@
+name: 'dotnet-feeder - wordpress'
+description: 'Writing posts from a wordpress website to a markdown file, use for automatically updating your Profile readme.'
+branding:
+  icon: rss
+  color: green
+inputs:
+  site:
+    description:
+      'The base url of the website'
+  files:
+    description:
+      'File(s) you wish to update. Separate multiple by ;'
+  template:
+    description:
+      'The post template'
+    required: false
+    default: '- [{title}]({url})'
+  count:
+    description:
+      'Number of posts to write to the file'
+    required: false
+    default: 5
+  tag:
+    description:
+      'Tag to replace, data between <!-- start {tag} --> and <!-- end {tag} --> will be replaced.'
+    required: false
+    default: 'posts'
+outputs:
+  files-updated:
+    description:
+      'Wether or not there where files updated, to conditionally trigger a commit'
+runs:
+  using: 'docker'
+  image: 'docker://ghcr.io/svrooij/dotnet-feeder:latest'
+  args:
+  - 'feed'
+  - '${{ inputs.site }}/wp-json/wp/v2/posts?_fields=id,title,link&per_page=${{ inputs.count}}'
+  - ${{ inputs.files }}
+  - '--tag'
+  - ${{ inputs.tag }}
+  - '--template'
+  - ${{ inputs.template }}

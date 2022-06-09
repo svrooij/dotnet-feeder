@@ -74,13 +74,13 @@ This workflow will trigger daily at 6:45 and can be triggered from the actions s
 
 ### Support for wordpress blogs
 
-Each wordpress website has (be default) a json api enabled. This feed is available at `https://{your-wordpress-site}/wp-json/wp/v2/posts?_fields=id,title,link` but this uses a different format. To enable wordpress feeds, you'll need to add the `--wordpress` parameter. In the github action you should add it like this:
+Each wordpress website has (be default) a json api enabled. This feed is available at `https://{your-wordpress-site}/wp-json/wp/v2/posts?_fields=id,title,link` but this uses a different format. For wordpress sites we created a separate action. In the github action you should add it like this:
 
 ```yaml
       - name: Dotnet-feeder
-        uses: svrooij/dotnet-feeder@main
+        uses: svrooij/dotnet-feeder/wordpress@main
         with:
-          feed: https://svrooij.io/feed.json
+          site: https://svrooij.io
           files: ./README.md
           extra_args: --wordpress
 ```
