@@ -90,11 +90,11 @@ Each wordpress website has (be default) a json api enabled. This feed is availab
 By running `dotnet-feeder feed https://svrooij.io/feed.json ./README.md --count 5 --tag s_posts` your can generate the section below.
 
 <!-- start s_posts -->
+- [Externalize user accounts: OpenID Connect](https://svrooij.io/2022/08/05/externalize-user-acconts-openid-connect/)
 - [Externalize user accounts: An introduction](https://svrooij.io/2022/07/28/externalize-user-acconts-intro/)
 - [Using a managed identity as a client credential](https://svrooij.io/2022/06/21/managed-identity-multi-tenant-app/)
 - [Federated credentials, wait what?](https://svrooij.io/2022/06/20/federated-credentials/)
 - [Building a GitHub Action in .NET](https://svrooij.io/2022/06/09/building-github-action-in-net/)
-- [Protect against certificate extraction - encryption](https://svrooij.io/2022/06/01/certificate-extraction-encryption/)
 <!-- end s_posts -->
 
 ## Developer stuff
