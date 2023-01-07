@@ -90,11 +90,11 @@ Each wordpress website has (be default) a json api enabled. This feed is availab
 By running `dotnet-feeder feed https://svrooij.io/feed.json ./README.md --count 5 --tag s_posts` your can generate the section below.
 
 <!-- start s_posts -->
+- [2022: An exciting year](https://svrooij.io/2023/01/02/this-was-2022/)
+- [Every project needs a badge](https://svrooij.io/2023/01/02/badges-badges-badges/)
 - [Proof of concept: Multi tenant managed identity](https://svrooij.io/2022/12/16/poc-multi-tenant-managed-identity/)
 - [Hacking Primary refresh tokens, oops created a virus](https://svrooij.io/2022/10/18/hacking-prt/)
 - [Cancellable task with timeout](https://svrooij.io/2022/10/04/cancellable-task-with-timeout/)
-- [Create Outlook category for everyone](https://svrooij.io/2022/09/27/create-corporate-outlook-category/)
-- [Protect against SSO for Graph PowerShell](https://svrooij.io/2022/09/14/protect-against-sso-graph-powershell/)
 <!-- end s_posts -->
 
 ## Developer stuff
