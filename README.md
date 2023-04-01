@@ -90,11 +90,11 @@ Each wordpress website has (be default) a json api enabled. This feed is availab
 By running `dotnet-feeder feed https://svrooij.io/feed.json ./README.md --count 5 --tag s_posts` your can generate the section below.
 
 <!-- start s_posts -->
+- [Nginx fault finding](https://svrooij.io/2023/03/30/nginx-errors/)
 - [Betatalks, I was their guest](https://svrooij.io/2023/03/06/betatalks-podcast/)
 - [Batching with Microsoft Graph](https://svrooij.io/2023/03/03/batching-in-microsoft-graph/)
 - [I disconnected our smart oven, and maybe you should as well](https://svrooij.io/2023/01/25/disconnect-your-smart-appliance/)
 - [Creating a Home Assistant component](https://svrooij.io/2023/01/18/home-assistant-component/)
-- [Extract all users with powershell and what to do about it part two](https://svrooij.io/2023/01/16/extract-all-users-with-powershell-part-two/)
 <!-- end s_posts -->
 
 ## Developer stuff
