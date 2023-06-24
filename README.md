@@ -90,11 +90,11 @@ Each wordpress website has (be default) a json api enabled. This feed is availab
 By running `dotnet-feeder feed https://svrooij.io/feed.json ./README.md --count 5 --tag s_posts` your can generate the section below.
 
 <!-- start s_posts -->
+- [Teams Hacktogether: Entry](https://svrooij.io/2023/06/22/teams-hacktogether-entry/)
+- [Remove PowerShell modules by name](https://svrooij.io/2023/06/21/remove-powershell-modules-by-name/)
+- [Assign additional permissions to service principal](https://svrooij.io/2023/06/19/assign-additional-permissions-to-service-principal/)
 - [Teams Hacktogether: Blazor](https://svrooij.io/2023/06/14/teams-hacktogether-blazor/)
 - [Teams Hacktogether: Toolkit](https://svrooij.io/2023/06/13/teams-hacktogether-toolkit/)
-- [Teams Hacktogether: Getting access](https://svrooij.io/2023/06/12/teams-hacktogether-getting-access/)
-- [Teams Hacktogether: Idea](https://svrooij.io/2023/06/12/teams-hacktogether-idea/)
-- [Nginx fault finding](https://svrooij.io/2023/03/30/nginx-errors/)
 <!-- end s_posts -->
 
 ## Developer stuff
