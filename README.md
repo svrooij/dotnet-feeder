@@ -90,11 +90,11 @@ Each wordpress website has (be default) a json api enabled. This feed is availab
 By running `dotnet-feeder feed https://svrooij.io/feed.json ./README.md --count 5 --tag s_posts` your can generate the section below.
 
 <!-- start s_posts -->
+- [Publish apps to Intune](https://svrooij.io/2023/08/31/publish-apps-to-intune/)
+- [Package apps for Intune](https://svrooij.io/2023/08/30/package-apps-intune/)
+- [Get your apps in Intune](https://svrooij.io/2023/08/30/apps-intune/)
 - [The Best GitHub workflow for a .NET app](https://svrooij.io/2023/08/09/best-github-workflow-net-app/)
 - [Emulate Managed Identities during development](https://svrooij.io/2023/08/03/emulate-managed-identities/)
-- [Use System.Text.Json in Azure Functions](https://svrooij.io/2023/07/26/system-text-json-azure-functions/)
-- [Fake banking security](https://svrooij.io/2023/07/24/fake-banking-security/)
-- [Configure SQL with managed identity](https://svrooij.io/2023/07/19/configure-sql-managed-identity/)
 <!-- end s_posts -->
 
 ## Developer stuff
