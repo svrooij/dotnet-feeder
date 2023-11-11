@@ -90,11 +90,11 @@ Each wordpress website has (be default) a json api enabled. This feed is availab
 By running `dotnet-feeder feed https://svrooij.io/feed.json ./README.md --count 5 --tag s_posts` your can generate the section below.
 
 <!-- start s_posts -->
+- [How do Federated credentials in GitHub Actions actually work](https://svrooij.io/2023/11/07/github-actions-federated-credentials-explained/)
 - [Creating IntuneWin files with C#](https://svrooij.io/2023/10/24/create-intunewin-file/)
 - [Introducing Content Prep PowerShell](https://svrooij.io/2023/10/19/open-source-intune-content-prep/)
 - [Decrypting intunewin files](https://svrooij.io/2023/10/09/decrypting-intunewin-files/)
 - [Analysing Win32 Content Prep Tool](https://svrooij.io/2023/10/04/analysing-win32-content-prep-tool/)
-- [Compute file hash in C# asynchronously](https://svrooij.io/2023/10/03/compute-file-hash-asynchronously/)
 <!-- end s_posts -->
 
 ## Developer stuff
