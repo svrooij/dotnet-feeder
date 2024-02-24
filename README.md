@@ -90,11 +90,11 @@ Each wordpress website has (be default) a json api enabled. This feed is availab
 By running `dotnet-feeder feed https://svrooij.io/feed.json ./README.md --count 5 --tag s_posts` your can generate the section below.
 
 <!-- start s_posts -->
+- [Nuke the man-in-the-middle attack](https://svrooij.io/2024/02/22/nuke-man-middle-attack/)
+- [Validate JWT with OpenID Connect](https://svrooij.io/2024/02/22/validate-jwt-openid-connect/)
 - [Local API for appliances](https://svrooij.io/2024/01/21/local-api-appliances/)
 - [Using dependency injection in your C# PowerShell Modules](https://svrooij.io/2024/01/18/dependencies-powershell-module-csharp/)
 - [Stop asking for passwords](https://svrooij.io/2024/01/16/stop-asking-for-passwords/)
-- [Automate your SSH keys using GitHub](https://svrooij.io/2024/01/15/automate-ssh-with-github/)
-- [Create your first PowerShell module with C#](https://svrooij.io/2024/01/12/create-powershell-module-csharp/)
 <!-- end s_posts -->
 
 ## Developer stuff
