@@ -90,11 +90,11 @@ Each wordpress website has (be default) a json api enabled. This feed is availab
 By running `dotnet-feeder feed https://svrooij.io/feed.json ./README.md --count 5 --tag s_posts` your can generate the section below.
 
 <!-- start s_posts -->
+- [Integration tests on protected API](https://svrooij.io/2024/07/10/integration-tests-protected-api/)
 - [Kiota with dependency injection](https://svrooij.io/2024/07/03/kiota-dependency-injection/)
 - [Authentication using certificate - Entra ID](https://svrooij.io/2024/06/05/authentication-certificate-key-vault/)
 - [What have you been up to?](https://svrooij.io/2024/05/21/what-have-you-been-up-to/)
 - [Azure SQL and Entra ID authentication, tips from the field](https://svrooij.io/2024/03/27/azure-sql-entra-id-tips/)
-- [Azure Pipelines and commit messages](https://svrooij.io/2024/03/27/azure-pipelines-commit-messages/)
 <!-- end s_posts -->
 
 ## Developer stuff
